@@ -1,0 +1,44 @@
+{%extends 'market/base.html' %} {%block content %}
+<link rel="stylesheet" href="/static/css/market_depth.css">
+
+<span>站点：{{request.session.site}}, {{request.session.first}}/{{request.session.second}}</span>
+<div>
+    <div class="price-table">
+        <table class="table table-striped">
+            <thead>
+                <th>买一价</th>
+                <th>数量</th>
+            </thead>
+            <tbody>
+
+
+                {% for bids in bid_pairs %}
+                <tr>
+                    <td>{{bids.0}}</td>
+                    <td>{{bids.1}}</td>
+                </tr>
+                {%endfor%}
+
+            </tbody>
+        </table>
+    </div>
+
+    <div class="price-table">
+        <table class="table table-striped">
+            <thead>
+                <th>卖一价</th>
+                <th>数量</th>
+            </thead>
+            <tbody>
+                {%for asks in ask_pairs %}
+                <tr>
+                    <td>{{asks.0}}</td>
+                    <td>{{asks.1}}</td>
+                </tr>
+                {%endfor%}
+            </tbody>
+        </table>
+
+    </div>
+</div>
+{%endblock%}

@@ -1,0 +1,28 @@
+{%extends 'base.html' %}
+
+{%block page-header %}
+Customer information
+{%endblock%}
+
+{%block page-content %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Status</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for customer in customers_list %}
+                <tr>
+                    <td> {{customer.id}}</td>
+                    <td> {{customer.name}}</td>
+                    <td> {{customer.status}}</td>
+                    <td> {{customer.date}}</td>
+                </tr>
+            {% endfor%}
+        </tbody>
+    </table>
+{%endblock%}
