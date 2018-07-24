@@ -4,7 +4,8 @@ from django.db import models
 class HedgeOrder(models.Model):
     site1 = models.CharField('site1', max_length = 255)
     site2 = models.CharField('site2', max_length = 255)
-
+    type1 = models.CharField('type1', max_length = 255)
+    type2 = models.CharField('type2', max_length = 255)
     class Meta:
         verbose_name = "对冲订单"
         verbose_name_plural = verbose_name

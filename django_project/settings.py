@@ -25,7 +25,7 @@ SECRET_KEY = 'k%-_ps61634ue579i%$v83b(ik%m#k!d_7#=l7r@3_6ioq*mv9'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['dazghr.natappfree.cc', 'localhost']
 
 
 # Application definition
@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'apps.hedgetrade',
+    'apps.market',
 ]
 
 MIDDLEWARE = [
@@ -58,7 +60,7 @@ TEMPLATE_PATH = os.path.join(BASE_DIR, 'templates')
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [TEMPLATE_PATH],
+        'DIRS': ['apps/frontend/dist'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -127,4 +129,5 @@ STATIC_PATH = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'  # You may find this is already defined as such.
 STATICFILES_DIRS = (
     STATIC_PATH,
+    os.path.join(BASE_DIR, 'apps/frontend/dist/static'),
 )

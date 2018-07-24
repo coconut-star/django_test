@@ -4,4 +4,5 @@ from apps.hedgetrade import views
 
 urlpatterns = [
     url(r'^$', views.dashboard),
+    url(r'^addOrder$',views.addOrder),
 ]

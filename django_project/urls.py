@@ -16,6 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url,include
+from django.views.generic.base import TemplateView
+
 from apps.market import views
 from apps.hedgetrade import views
 
@@ -23,7 +25,7 @@ from django_project.views import *
 admin.autodiscover()
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url(r'^$', homepage),
+    url(r'^$', TemplateView.as_view(template_name="index.html")),
     url(r'^market/',include('apps.market.urls')),
     url(r'^hedgetrade/', include('apps.hedgetrade.urls'))
 ]

@@ -3,68 +3,57 @@
 <!-- Three -->
 <section id="three" class="wrapper">
 
-    <form method="post" action="#">
+    <form method="post" action="/hedgetrade/addOrder">
+         {%csrf_token%}
         <div class="container">
-            <div class="site-selector">
-                <select name="demo-category" id="demo-category">
-                    <option value="">fcoin</option>
-                    <option value="1">Coineal</option>
-                    <option value="1">huobi</option>
-                </select>
-            </div>
-            <div class="site-selector">
-                <select name="demo-category" id="demo-category">
-                    <option value="">fcoin</option>
-                    <option value="1">Coineal</option>
-                    <option value="1">huobi</option>
-                </select>
-            </div>
+
             <!-- Break -->
             <div class="12u$">
                 <div class="select-wrapper">
-                    <select name="demo-category" id="demo-category">
-                        <option value="">- Category -</option>
-                        <option value="1">Manufacturing</option>
-                        <option value="1">Shipping</option>
-                        <option value="1">Administration</option>
-                        <option value="1">Human Resources</option>
-                    </select>
+                    <div class="site-selector">
+                        平台1：
+                        <select name="site1" id="site1">
+                            <option value="fcoin">fcoin</option>
+                            <option value="Coineal">Coineal</option>
+                            <option value="huobi">huobi</option>
+                        </select>
+                    </div>
+                    <div class="site-selector">
+                        平台2：
+                        <select name="site2" id="site2">
+                            <option value="fcoin">fcoin</option>
+                            <option value="Coineal">Coineal</option>
+                            <option value="huobi">huobi</option>
+                        </select>
+                    </div>
+                    <div class="site-selector">
+                        币种1：
+                        <select name="type1" id="type1">
+                            <option value="btc">btc</option>
+                            <option value="eth">eth</option>
+                            <option value="usdt">usdt</option>
+                        </select>
+                    </div>
+                    <div class="site-selector">
+                        币种2：
+                        <select name="type2" id="type2">
+                            <option value="btc">btc</option>
+                            <option value="eth">eth</option>
+                            <option value="usdt">usdt</option>
+                        </select>
+                    </div>
+
                 </div>
             </div>
+
             <!-- Break -->
-            <div class="4u 12u$(small)">
-                <input type="radio" id="demo-priority-low" name="demo-priority" checked>
-                <label for="demo-priority-low">Low Priority</label>
-            </div>
-            <div class="4u 12u$(small)">
-                <input type="radio" id="demo-priority-normal" name="demo-priority">
-                <label for="demo-priority-normal">Normal Priority</label>
-            </div>
-            <div class="4u$ 12u$(small)">
-                <input type="radio" id="demo-priority-high" name="demo-priority">
-                <label for="demo-priority-high">High Priority</label>
-            </div>
-            <!-- Break -->
-            <div class="6u 12u$(small)">
-                <input type="checkbox" id="demo-copy" name="demo-copy">
-                <label for="demo-copy">Email me a copy of this message</label>
-            </div>
-            <div class="6u$ 12u$(small)">
-                <input type="checkbox" id="demo-human" name="demo-human" checked>
-                <label for="demo-human">I am a human and not a robot</label>
-            </div>
-            <!-- Break -->
-            <div class="12u$">
-                <textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
-            </div>
-            <!-- Break -->
-            <div class="12u$">
+            <div class="6u$" style="margin-left:5%; margin-top:150px">
                 <ul class="actions">
                     <li>
-                        <input type="submit" value="Send Message" />
+                        <input type="submit" value="提交" />
                     </li>
                     <li>
-                        <input type="reset" value="Reset" class="alt" />
+                        <input type="reset" value="重置" />
                     </li>
                 </ul>
             </div>
